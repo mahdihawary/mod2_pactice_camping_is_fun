@@ -1,0 +1,14 @@
+<h1>Signups#new</h1>
+<p>Find me in app/views/signups/new.html.erb</p>
+<%= form_for(@signup) do |f| %>
+<%= f.label :camper_id %>
+<%= f.collection_select(:camper_id, Camper.all, :id, :name) %>
+<br>
+<%= f.label :activity_id %>
+<%= f.collection_select(:activity_id, Activity.all, :id, :name) %>
+<br>
+<%= f.label :time %>
+<%= f.number_field :time %>
+<br>
+<%= f.submit %>
+<% end %>
